@@ -20,3 +20,14 @@ $padding-sm: $padding * 0.75;
 $padding-md: $padding * 1.5;
 $padding-lg: $padding * 2;
 $padding-xl: $padding * 3;
+
+$font-family-primary: 'Roboto';
+
+$breakpoints: (
+    'xs': 576px,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px
+);

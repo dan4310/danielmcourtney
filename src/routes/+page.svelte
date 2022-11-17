@@ -1,2 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+
+<div class="page">
+    <main class="page__container-lg">
+        <h1>Home Page</h1>
+    </main>
+</div>

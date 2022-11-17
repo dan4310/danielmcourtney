@@ -8,8 +8,9 @@
 
 
 <header class="navbar">
-	<div class="">
+	<div class="navbar__left">
 		<img src="images/michaelangelo.png" alt="Me icon" />
+		<h3>Daniel Courtney</h3>
 	</div>
 	<ul class="navbar__links">
 		<li><a class="navbar__link" href="/about">About</a></li>

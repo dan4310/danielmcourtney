@@ -8,8 +8,12 @@
 	}
 </script>
 
-<h1>Projects</h1>
+<div class="page">
+	<main class="page__container-lg">
+		<h1>Projects</h1>
 
-{#each data.projects as project (project.id)}
-	<p>{project.title}</p>
-{/each}
+		{#each data.projects as project (project.id)}
+			<p>{project.title}</p>
+		{/each}
+	</main>
+</div>

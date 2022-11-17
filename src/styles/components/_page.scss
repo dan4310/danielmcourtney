@@ -1,0 +1,14 @@
+@use '$styles/variables' as var;
+
+.page {
+    display: flex;
+    justify-content: center;
+    @each $break, $width in var.$breakpoints {
+        .page__container-#{$break} {
+            margin-left: var.$padding-sm;
+            margin-right: var.$padding-sm;
+            width: 100%;
+            max-width: $width;
+        }
+    }
+}
