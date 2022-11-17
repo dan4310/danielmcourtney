@@ -1,0 +1,29 @@
+[
+	{
+		"id": 1,
+		"company": "Manhattan District Attorney",
+		"position": "Software Engineer",
+		"description": "I did many things here",
+		"location": "New York, NY",
+		"startDate": "2021-08-27",
+		"endDate": ""
+	},
+	{
+		"id": 2,
+		"company": "Manhattan District Attorney",
+		"position": "Software Engineer",
+		"description": "I did many things here",
+		"location": "New York, NY",
+		"startDate": "2020-08-27",
+		"endDate": "2019-08-27"
+	},
+	{
+		"id": 3,
+		"company": "Manhattan District Attorney",
+		"position": "Software Engineer",
+		"description": "I did many things here",
+		"location": "New York, NY",
+		"startDate": "2018-08-27",
+		"endDate": "2017-08-27"
+	}
+]
