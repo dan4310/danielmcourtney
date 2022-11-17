@@ -1,6 +1,10 @@
 @use 'variables';
 
+@use 'breakpoints';
+
 @use 'reset';
 @use 'theme';
+
+@use 'components/navbar';
 
 @use 'global';

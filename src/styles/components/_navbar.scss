@@ -1,0 +1,25 @@
+@use '$styles/variables' as var;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var.$padding-sm;
+
+    .navbar__links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var.$padding-md;
+
+        .navbar__link {
+            transition: opacity 0.15s;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+
+
