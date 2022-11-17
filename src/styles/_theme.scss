@@ -1,0 +1,30 @@
+$themes: (
+    'light': (
+        'color-background': darken(white, 5),
+        'color-foreground': darken(white, 30),
+        'color-divider': darken(white, 40),
+        'color-text': black,
+        'color-text-muted': lighten(black, 30),
+    ),
+    'dark': (
+        'color-background': lighten(black, 5),
+        'color-foreground': lighten(black, 30),
+        'color-divider': lighten(black, 40),
+        'color-text': white,
+        'color-text-muted': darken(white, 30),
+    )
+);
+
+:root {
+    @each $prop, $val in map-get($themes, 'light') {
+        --#{$prop}: #{$val};
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        @each $prop, $val in map-get($themes, 'dark') {
+            --#{$prop}: #{$val};
+        }
+    }
+}

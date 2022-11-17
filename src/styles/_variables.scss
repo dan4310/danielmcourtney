@@ -1,0 +1,21 @@
+
+$theme-foreground: var(--color-foreground);
+$theme-background: var(--color-background);
+$theme-divider: var(--color-divider);
+$theme-text: var(--color-text);
+$theme-text-muted: var(--color-text-muted);
+
+$color-primary: purple;
+$color-secondary: blue;
+
+$font-size: 1rem;
+$font-size-sm: $font-size * 0.5;
+$font-size-md: $font-size * 1.5;
+$font-size-lg: $font-size * 1.75;
+$font-size-xl: $font-size * 2;
+
+$padding: 1rem;
+$padding-sm: $padding * 0.5;
+$padding-md: $padding * 1.5;
+$padding-lg: $padding * 2.5;
+$padding-xl: $padding * 3;
