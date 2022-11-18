@@ -19,7 +19,10 @@ export type Education = {
 
 export type Project = {
 	id: number
+	slug: string
 	title: string
+	short: string
 	description: string
 	tags: string
+	image: string
 }

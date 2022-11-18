@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '$styles/index.scss'
-
 	let scrollY = 0
 </script>
 
@@ -13,7 +12,7 @@
 
 <header class="navbar" class:active={scrollY > 50}>
 	<div class="navbar__left">
-		<img class="avatar" src="images/michaelangelo.jpeg" alt="Me icon" />
+		<img class="avatar" src="/images/michaelangelo.jpeg" alt="Me icon" />
 		<a href="/"><h3>Daniel Courtney</h3></a>
 	</div>
 	<div class="navbar__right">

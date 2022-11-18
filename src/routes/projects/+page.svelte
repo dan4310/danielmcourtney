@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types'
+	import ProjectCard from '$lib/components/ProjectCard.svelte'
+import type { PageData } from './$types'
 
 	export let data: PageData
 
@@ -12,8 +13,33 @@
 	<main class="page__container-lg">
 		<h1>Projects</h1>
 
-		{#each data.projects as project (project.id)}
-			<p>{project.title}</p>
-		{/each}
+		<div class="projects-container">
+			{#each data.projects as project (project.id)}
+				<ProjectCard {project} />
+			{/each}
+		</div>
 	</main>
 </div>
+
+<style lang="scss">
+	@use '../../styles/variables' as var;
+	@use '../../styles/breakpoints' as b;
+
+	.projects-container {
+		margin-top: var.$padding;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var.$padding-md;
+	}
+
+	@include b.break(md) {
+		.projects-container {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			gap: var.$padding-lg;
+			align-items: start;
+		}
+	}
+</style>

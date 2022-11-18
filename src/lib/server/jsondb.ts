@@ -19,6 +19,7 @@ export async function readJson<T>(path: string): Promise<T> {
 
 type BaseEntity = {
 	id: number
+	slug?: string
 }
 
 class DBSet<T extends BaseEntity> {
@@ -36,11 +37,18 @@ class DBSet<T extends BaseEntity> {
 		return data
 	}
 
-	public async getOne(id: string): Promise<T | null> {
+	public async getOne(id: number | string): Promise<T | null> {
 		await this.checkCache()
 
 		for (let i = 0; i < this._cache.length; i++) {
-			if (this._cache[i].id === i) return this._cache[i]
+			switch (typeof id) {
+				case 'number':
+					if (this._cache[i].id === id) return this._cache[i]
+					break
+				case 'string':
+					if (this._cache[i]?.slug === id) return this._cache[i]
+					break;
+			}
 		}
 		return null
 	}

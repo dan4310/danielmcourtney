@@ -2,19 +2,27 @@
 	{
 		"id": 1,
 		"title": "Tonys Tacos",
+		"slug": "tonys-tacos",
 		"description": "Food ordering app",
+		"short": "Food ordering app",
 		"tags": "#ReactNative#App#HTML#CSS"
 	},
 	{
 		"id": 2,
 		"title": "Tonys Tacos",
+		"slug": "alpaca-python-trading",
+		"short": "Food ordering app",
 		"description": "Food ordering app",
+		"image": "",
 		"tags": "#ReactNative#App#HTML#CSS"
 	},
 	{
 		"id": 3,
+		"slug": "sorting-visualizer",
 		"title": "Tonys Tacos",
+		"short": "Food ordering app",
 		"description": "Food ordering app",
+		"image": "",
 		"tags": "#ReactNative#App#HTML#CSS"
 	}
 ]
