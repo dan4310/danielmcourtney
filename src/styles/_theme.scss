@@ -1,15 +1,15 @@
 $themes: (
 	'light': (
 		'color-background': darken(white, 5),
-		'color-foreground': darken(white, 30),
-		'color-divider': darken(white, 40),
+		'color-foreground': darken(white, 20),
+		'color-divider': darken(white, 30),
 		'color-text': black,
 		'color-text-muted': lighten(black, 30)
 	),
 	'dark': (
 		'color-background': lighten(black, 5),
-		'color-foreground': lighten(black, 30),
-		'color-divider': lighten(black, 40),
+		'color-foreground': lighten(black, 20),
+		'color-divider': lighten(black, 30),
 		'color-text': white,
 		'color-text-muted': darken(white, 30)
 	)

@@ -9,6 +9,8 @@
             margin-right: var.$padding-sm;
             width: 100%;
             max-width: $width;
+            padding-top: var.$padding;
+            padding-bottom: var.$padding;
         }
     }
 }

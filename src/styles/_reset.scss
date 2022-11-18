@@ -12,3 +12,9 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+textarea, input {
+	color: inherit;
+	font-family: inherit;
+	box-sizing: border-box;
+}
