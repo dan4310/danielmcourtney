@@ -1,8 +1,8 @@
 @use 'variables' as var;
 
 @mixin focus($color: var.$color-primary) {
-    &:focus {
-        box-shadow: 0 0 0 4px rgba($color, 0.2);
-        outline: var.$border-thickness solid $color;
-    }
+	&:focus {
+		box-shadow: 0 0 0 4px rgba($color, 0.2);
+		outline: var.$border-thickness solid $color;
+	}
 }

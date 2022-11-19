@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte'
-import type { PageData } from './$types'
+	import type { PageData } from './$types'
 
 	export let data: PageData
 
@@ -38,7 +38,7 @@ import type { PageData } from './$types'
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: row;
-			gap: var.$padding-lg;
+			justify-content: space-between;
 			align-items: start;
 		}
 	}

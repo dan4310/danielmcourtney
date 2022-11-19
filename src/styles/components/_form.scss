@@ -2,25 +2,25 @@
 @use '$styles/mixins' as m;
 
 .form-control {
-    border: var.$border-thickness solid var.$theme-divider;
-    padding: 12px;
-    font-size: var.$font-size-sm;
-    background-color: transparent;
-    border-radius: var.$border-radius;
-    transition: box-shadow ease-in-out 0.15s;
+	border: var.$border-thickness solid var.$theme-divider;
+	padding: 12px;
+	font-size: var.$font-size-sm;
+	background-color: transparent;
+	border-radius: var.$border-radius;
+	transition: box-shadow ease-in-out 0.15s;
 
-    @include m.focus(var.$color-primary);
+	@include m.focus(var.$color-primary);
 
-    &:disabled {
-        background: var.$theme-foreground;
-        opacity: 0.5;
-    }
+	&:disabled {
+		background: var.$theme-foreground;
+		opacity: 0.5;
+	}
 }
 
 .form-label {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 8px;
-    color: var.$theme-text-muted;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 8px;
+	color: var.$theme-text-muted;
 }

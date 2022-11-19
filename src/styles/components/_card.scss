@@ -1,31 +1,33 @@
 @use '$styles/variables' as var;
 
 .card {
-    border: var.$border-thickness solid var.$theme-divider;
-    border-radius: var.$border-radius;
-    padding: var.$padding-sm;
-    .card__body {
-        margin-top: var.$padding;
-        margin-bottom: var.$padding;
-    }
-    .card__footer {
-        word-wrap: break-word;
-    }
+	border: var.$border-thickness solid var.$theme-divider;
+	border-radius: var.$border-radius;
+	padding: var.$padding-sm;
+	.card__body {
+		margin-top: var.$padding;
+		margin-bottom: var.$padding;
+	}
+	.card__footer {
+		word-wrap: break-word;
+	}
+	.card__footer,
+	.card__header {
+		padding: 8px;
+	}
 
-    &-img {
-        @extend .card;
-        padding: 0;
-        width: 225px;
-        .card__body {
-            height: 125px;
-            width: 225px;
-            background-color: var.$theme-foreground;
-        }
+	&-img {
+		@extend .card;
+		padding: 0;
+		width: 265px;
+		.card__body {
+			@extend .card__body;
 
-        .card__footer, .card__header {
-            padding: 8px;
-        }
-    }
-
-    
+			background-color: var.$theme-foreground;
+			img {
+				height: 165px;
+				width: 265px;
+			}
+		}
+	}
 }

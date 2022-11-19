@@ -1,5 +1,5 @@
 import { Projects } from '$lib/server/jsondb'
-import type { PageSeverLoad } from './$types'
+import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async () => {
 	const projects = await Projects.getAll()

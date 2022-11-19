@@ -2,36 +2,35 @@
 @use '$styles/mixins' as m;
 
 @mixin button($bg-color: #e2e2e2) {
-    background-color: $bg-color;
-    border: var.$border-thickness solid transparent;
-    padding: 8px 16px;
-    border-radius: var.$border-radius;
-    transition: background-color ease-in-out 0.15s,
-        box-shadow ease-in-out 0.15s;
-    font-weight: 700;
-    font-size: var.$font-size;
-    cursor: pointer;
-    @include m.focus($bg-color);
+	background-color: $bg-color;
+	border: var.$border-thickness solid transparent;
+	padding: 8px 16px;
+	border-radius: var.$border-radius;
+	transition: background-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+	font-weight: 700;
+	font-size: var.$font-size;
+	cursor: pointer;
+	@include m.focus($bg-color);
 
-    &:hover {
-        background-color: lighten($bg-color, 5);
-        color: white;
-    }
-    &:active {
-        background-color: darken($bg-color, 5);
-    }
+	&:hover {
+		background-color: lighten($bg-color, 5);
+		color: white;
+	}
+	&:active {
+		background-color: darken($bg-color, 5);
+	}
 }
 
 @each $name, $color in var.$colors {
-    .btn-#{$name} {
-        @include button($color);
-        color: white;
-    }
+	.btn-#{$name} {
+		@include button($color);
+		color: white;
+	}
 
-    .btn-outline-#{$name} {
-        @include button($color);
-        background-color: transparent;
-        border-color: $color;
-        color: $color;
-    }
+	.btn-outline-#{$name} {
+		@include button($color);
+		background-color: transparent;
+		border-color: $color;
+		color: $color;
+	}
 }

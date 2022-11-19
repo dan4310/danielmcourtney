@@ -22,7 +22,9 @@
 						<p>{job.description}</p>
 					</div>
 					<div class="job__footer">
-						<small class="job__dates">{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small>
+						<small class="job__dates"
+							>{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small
+						>
 					</div>
 				</div>
 			{/each}
@@ -36,7 +38,9 @@
 							<h3>{education.name}</h3>
 							<p class="job__position">{education.degree}</p>
 						</div>
-						<small class="job__dates">{education.startDate} - {education.endDate ? education.endDate : 'Present'}</small>
+						<small class="job__dates"
+							>{education.startDate} - {education.endDate ? education.endDate : 'Present'}</small
+						>
 					</div>
 					<div class="job__description">
 						<p>{education.description}</p>

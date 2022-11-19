@@ -3,12 +3,10 @@
 	let scrollY = 0
 </script>
 
-
-<svelte:window bind:scrollY={scrollY} />
+<svelte:window bind:scrollY />
 <svelte:head>
 	<title>Daniel Courtney</title>
 </svelte:head>
-
 
 <header class="navbar" class:active={scrollY > 50}>
 	<div class="navbar__left">
@@ -32,4 +30,3 @@
 		border-radius: 100px;
 	}
 </style>
-
