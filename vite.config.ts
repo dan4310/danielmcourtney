@@ -7,7 +7,6 @@ const config: UserConfig = {
 	resolve: {
 		alias: {
 			$styles: path.resolve('./src/styles'),
-			$assets: path.resolve('./src/assets')
 		}
 	}
 }

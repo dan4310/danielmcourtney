@@ -19,7 +19,7 @@
 		align-items: center;
 		justify-content: center;
 		gap: var.$padding-md;
-		@include b.break(sm) {
+		@include b.break(md) {
 			display: flex;
 		}
 		.navbar__link {

@@ -5,8 +5,7 @@
 	$: mailUrl = `mailto:${to}?subject=${subject}&body=` + body.replaceAll('\n', '%0D%0A')
 
 	function submit() {
-		// location.href = mailUrl
-		console.log(mailUrl)
+		location.href = mailUrl
 	}
 </script>
 

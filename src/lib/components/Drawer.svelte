@@ -25,9 +25,9 @@
 		>
 			<DialogTitle>
 				<div class="drawer__header">
-					<button type="button" class="btn-outline-primary" on:click={() => dispatch('close')}
-						>X</button
-					>
+					<button type="button" class="btn-round" on:click={() => dispatch('close')}>
+						<i class="fa fa-x" />
+					</button>
 				</div>
 			</DialogTitle>
 			<div class="drawer__content">
@@ -57,6 +57,7 @@
 		.drawer__header {
 			display: flex;
 			justify-content: end;
+			padding: var.$padding-sm;
 		}
 	}
 

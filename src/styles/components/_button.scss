@@ -34,3 +34,20 @@
 		color: $color;
 	}
 }
+
+.btn-round {
+	border-radius: 200px;
+	padding: var.$padding-sm;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: var.$border-thickness;
+	background-color: var.$theme-foreground;
+	color: var.$theme-text;
+	cursor: pointer;
+	transition: opacity ease-in-out 0.15s;
+	font-size: 18px;
+	&:hover {
+		opacity: 0.8;
+	}
+}

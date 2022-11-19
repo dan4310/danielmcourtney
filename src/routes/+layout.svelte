@@ -23,7 +23,9 @@
 			<li><a class="navbar__link" href="/projects">Projects</a></li>
 			<li><a class="btn-outline-primary" href="/contact">Contact</a></li>
 		</ul>
-		<button class="btn-menu btn-primary" type="button" on:click={() => (open = true)}>M</button>
+		<button class="btn-menu btn-round" type="button" on:click={() => (open = true)}>
+			<i class="fa fa-bars" />
+		</button>
 		<Drawer {open} on:close={() => (open = false)}>
 			<ul class="sidemenu">
 				<li><a class="sidemenu__link" href="/about">About</a></li>
@@ -44,7 +46,7 @@
 		border-radius: 100px;
 	}
 	.btn-menu {
-		@include b.break(sm) {
+		@include b.break(md) {
 			display: none;
 		}
 	}
