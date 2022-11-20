@@ -6,6 +6,8 @@ export type Job = {
 	location: string
 	startDate: string
 	endDate: string
+	image?: string
+	link?: string
 }
 
 export type Education = {
@@ -14,7 +16,9 @@ export type Education = {
 	degree: string
 	description?: string
 	startDate: string
-	endDate: string
+	endDate?: string
+	image?: string
+	link?: string
 }
 
 export type Project = {
@@ -31,4 +35,25 @@ export type Project = {
 export type Admin = {
 	username: string
 	password: string
+}
+
+export type CommitResult = {
+	sha: string
+	node_id: string
+	commit: Commit
+	url: string
+	html_url: string
+	comments_url: string
+}
+
+export type Commit = {
+	author: GithubUser
+	committer: GithubUser
+	message: string
+}
+
+export type GithubUser = {
+	name: string
+	email: string
+	date: string
 }

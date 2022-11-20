@@ -11,7 +11,9 @@
 		],
 		"location": "New York, NY",
 		"startDate": "2021-08-27",
-		"endDate": ""
+		"endDate": "",
+		"image": "/images/dany_logo.png",
+		"link": "https://www.manhattanda.org/"
 	},
 	{
 		"id": 2,
@@ -23,7 +25,9 @@
 		],
 		"location": "New York, NY",
 		"startDate": "2020-06-27",
-		"endDate": "2019-07-27"
+		"endDate": "2019-07-27",
+		"link": "https://www.paysfer.com/",
+		"image": "/images/paysfer_logo.png"
 	},
 	{
 		"id": 3,
@@ -35,6 +39,34 @@
 		],
 		"location": "New York, NY",
 		"startDate": "2018-08-27",
-		"endDate": "2017-08-27"
+		"endDate": "2017-08-27",
+		"link": "https://physics.nyu.edu/grierlab/",
+		"image": "/images/nyu_logo.png"
+	},
+	{
+		"id": 4,
+		"company": "Tony's Tacos",
+		"position": "Cashier/Busboy/Server",
+		"details": [
+			"Tale orders, serve food, settle bills, manage stock, clean"
+		],
+		"location": "Floral Park, NY",
+		"startDate": "2020-07-25",
+		"endDate": "2021-07-25",
+		"image": "/images/tonys_logo.png",
+		"link": "https://www.tonystaco.com/"
+	},
+	{
+		"id": 5,
+		"company": "404 Fitness N.Y.U",
+		"position": "Fitness Monitor",
+		"details": [
+			"Ensure gym patrons follow rules, re-rack weights, clean machines, answer phones and questions, assist managers with daily gym operations."
+		],
+		"location": "New York, NY",
+		"startDate": "2017-08-25",
+		"endDate": "2020-05-15",
+		"link": "https://gonyuathletics.com/sports/404-fitness",
+		"image": "/images/nyu_logo.png"
 	}
 ]

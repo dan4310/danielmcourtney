@@ -1,5 +1,6 @@
 <script lang="ts">
-	import type { Project } from '$lib/types'
+	import { MY_GITHUB } from '$lib/config'
+import type { Project } from '$lib/types'
 
 	export let project: Project
 
@@ -11,7 +12,7 @@
 	{#if project.github || project.link}
 		<div class="card__header">
 			{#if project.github}
-				<a href={project.github}>
+				<a href={MY_GITHUB + '/' + project.github}>
 					<i class="fa-brands fa-github" />
 				</a>
 			{/if}
@@ -79,13 +80,15 @@
 			&:hover {
 				.card__title {
 					text-decoration: underline;
+					color: lighten(var.$color-primary, 20)
 				}
 			}
 
 			.card__title {
 				font-size: var.$font-size;
 				color: var.$color-primary;
-				transition: text-decoration ease-in-out 0.15s;
+				transition: text-decoration ease-in-out 0.15s,
+					color ease-in-out 0.1s;
 			}
 			.card__body {
 				font-size: var.$font-size-sm;

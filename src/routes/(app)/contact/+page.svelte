@@ -1,5 +1,7 @@
 <script lang="ts">
-	let to = 'dan4310@gmail.com'
+	import { MY_EMAIL } from "$lib/config"
+
+	let to = MY_EMAIL
 	let subject = 'New Opportunity'
 	let body = ''
 	$: mailUrl = `mailto:${to}?subject=${subject}&body=` + body.replaceAll('\n', '%0D%0A')

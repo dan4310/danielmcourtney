@@ -3,9 +3,90 @@
 .markdown {
 	display: flex;
 	flex-direction: column;
-	gap: var.$padding;
 
 	h1 {
-		color: var.$color-primary;
+		margin: var.$padding 0;
 	}
+
+	h2 {
+		margin: var.$padding-sm 0;
+	}
+
+	h3 {
+		margin: var.$padding-xs 0;
+	}
+
+	p {
+		padding: var.$padding-xs 0;
+	}
+
+	a {
+		text-decoration: underline;
+		color: var.$color-primary;
+		&:hover {
+			color: ligthen(var.$color-primary, 5)
+		}
+	}
+
+	img {
+		object-fit: cover;
+		width: 100%;
+	}
+
+	del {
+		opacity: 0.3;
+	}
+	table {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: var.$padding-xs;
+	}
+	tbody {
+		display: flex;
+		width: 100%;
+		gap: var.$padding-xs;
+		flex-direction: column;
+	}
+
+	tr {
+		width: 100%;
+		display: flex;
+		gap: var.$padding-xs;
+	}
+
+	th, td {
+		padding: var.$padding-xs;
+		font-size: var.$font-size-sm;
+		border-radius: var.$border-radius;
+		width: 100%;
+	}
+
+	td {
+		background-color: var.$theme-foreground;
+	}
+
+	th {
+		border: var.$border-thickness solid var.$theme-divider;
+	}
+
+	blockquote {
+		border-left: 5px solid var.$theme-divider;
+		color: var.$theme-text-muted;
+		padding-left: var.$padding-sm;
+		margin: var.$padding-sm 0;
+	}
+
+	pre {
+		box-sizing: border-box;
+		padding: 1rem 0rem;
+		margin: var.$padding-sm 0;
+		code {
+			padding: 1rem;
+			border-radius: var.$border-radius;
+			background-color: var.$theme-foreground;
+			text-align: start;
+		}
+	}
+	
 }

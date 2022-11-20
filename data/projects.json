@@ -6,7 +6,7 @@
 		"description": "Food ordering phone app for Tony's Tacos taqueria.",
 		"image": "/images/tonys.png",
 		"tags": "#ReactNative#App#HTML#CSS",
-		"github": "https://github.com/dan4310/TonysTacosApp"
+		"github": "TonysTacosApp"
 	},
 	{
 		"id": 2,
@@ -15,7 +15,7 @@
 		"description": "Web app to display different sorting algorithms.",
 		"image": "/images/sorter.png",
 		"tags": "#React#HTML#CSS#Algorithms",
-		"github": "https://github.com/dan4310/SortingVisualizer",
+		"github": "SortingVisualizer",
 		"link": "https://sort.danielmcourtney.com/"
 	},
 	{
@@ -26,7 +26,7 @@
 		"description": "Social media for film and TV reviews.",
 		"image": "/images/filmCriticHome.png",
 		"tags": "#React#HTML#CSS#Redux.js#Fullstack",
-		"github": "https://github.com/dan4310/FilmCritic"
+		"github": "FilmCritic"
 	},
 	{
 		"id": 4,
@@ -34,6 +34,6 @@
 		"slug": "python-trader",
 		"description": "Python trading body with the Alpaca API.",
 		"tags": "#Python#Stocks",
-		"github": "https://github.com/dan4310/AlpacaTradingBot"
+		"github": "AlpacaTradingBot"
 	}
 ]

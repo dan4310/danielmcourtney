@@ -12,6 +12,6 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	return {
 		project,
-		content: await converToHTML(markdown)
+		content: await converToHTML(markdown, project)
 	}
 }

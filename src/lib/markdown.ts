@@ -1,14 +1,29 @@
 import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import remarkGfm from 'remark-gfm'
 import rehypeStringify from 'rehype-stringify'
 
-export async function converToHTML(markdown: string): Promise<string> {
+type SuppliedData = {
+	[key: string]: string | number
+}
+
+export async function converToHTML(markdown: string, data: SuppliedData = {}): Promise<string> {
 	const file = await unified()
 		.use(remarkParse)
+		.use(remarkGfm)
 		.use(remarkRehype, { allowDangerousHtml: true })
 		.use(rehypeStringify, { allowDangerousHtml: true })
-		.process(markdown)
+		.process(searchAndReplace(markdown, data))
 
 	return String(file)
+}
+
+function searchAndReplace(content: string, data: SuppliedData = {}): string {
+	const keys = Object.keys(data)
+	for (let i = 0; i < keys.length; i++) {
+		const key = keys[i]
+		content = content.replaceAll('$' + key.toUpperCase(), data[key].toString())
+	}
+	return content
 }

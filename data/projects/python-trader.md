@@ -1,1 +1,1 @@
-# Python Stock Trader
+# $TITLE
