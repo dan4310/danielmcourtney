@@ -31,6 +31,7 @@
 				<li><a class="sidemenu__link" href="/about">About</a></li>
 				<li><a class="sidemenu__link" href="/experience">Experience</a></li>
 				<li><a class="sidemenu__link" href="/projects">Projects</a></li>
+				<li><a class="sidemenu__link btn-outline-primary" href="/contact">Contact</a></li>
 			</ul>
 		</Drawer>
 	</div>
@@ -54,7 +55,9 @@
 	.sidemenu {
 		display: flex;
 		flex-direction: column;
-		gap: var.$padding;
+		gap: var.$padding-md;
+		padding: var.$padding;
+		overflow-y: scroll;
 		li {
 			display: flex;
 			&:hover {

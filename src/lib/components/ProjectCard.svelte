@@ -7,33 +7,31 @@
 	$: tags = tagArr.slice(1, tagArr.length)
 </script>
 
-<a class="project-root" href={`/projects/${project.slug}`}>
-	<div class="card">
-		{#if project.github || project.link}
-		<div class="card__header">
-			{#if project.github}
-			<a href={project.github}>
-				<i class="fa-brands fa-github"></i>
-			</a>
-			{/if}
-			{#if project.link}
-			<a href={project.link}>
-				<i class="fa-solid fa-arrow-up-right-from-square"></i>
-			</a>
-			{/if}
-		</div>
+<div class="card project-root">
+	{#if project.github || project.link}
+	<div class="card__header">
+		{#if project.github}
+		<a href={project.github}>
+			<i class="fa-brands fa-github"></i>
+		</a>
 		{/if}
-		<div class="card__main">
-			<p class="card__title">{project.title}</p>
-			<p class="card__body">{project.description}</p>
-		</div>
-		<div class="card__footer">
-			{#each tags as tag (tag)}
-				<span>#{tag}</span>
-			{/each}
-		</div>
+		{#if project.link}
+		<a href={project.link}>
+			<i class="fa-solid fa-arrow-up-right-from-square"></i>
+		</a>
+		{/if}
 	</div>
-</a>
+	{/if}
+	<a class="card__main" href={`/projects/${project.slug}`}>
+		<p class="card__title">{project.title}</p>
+		<p class="card__body">{project.description}</p>
+	</a>
+	<div class="card__footer">
+		{#each tags as tag (tag)}
+			<span>#{tag}</span>
+		{/each}
+	</div>
+</div>
 
 <style lang="scss">
 	@use '../../styles/variables' as var;
@@ -81,6 +79,7 @@
 
 			.card__title {
 				font-size: var.$font-size;
+				color: lighten(var.$color-primary, 50);
 			}
 			.card__body {
 				font-size: var.$font-size-sm;

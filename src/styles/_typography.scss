@@ -1,5 +1,5 @@
 $font-roboto: (
-	'path': 'fonts/Roboto/',
+	'path': '/fonts/Roboto/',
 	'ext': 'ttf',
 	'fonts': (
 		// 'Roboto-Thin': (
@@ -68,6 +68,7 @@ $fonts: (
 			src: url($path + $filename + '.' + $ext);
 			font-weight: map-get($type, 'weight');
 			font-style: map-get($type, 'style');
+			font-display: swap;
 		}
 	}
 }
