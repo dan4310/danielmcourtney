@@ -1,9 +1,6 @@
 import type { Education, Job, Project } from '$lib/types'
-import fs from 'fs'
 import path from 'path'
 import { readJson, readFile } from '$lib/server/util'
-
-
 
 interface BaseEntity {
 	id: number

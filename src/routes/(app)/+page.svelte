@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProjectCard from '$lib/components/ProjectCard.svelte'
-import type { PageData } from './$types'
+	import type { PageData } from './$types'
 
 	export let data: PageData
 </script>
@@ -42,7 +42,7 @@ import type { PageData } from './$types'
 <style lang="scss">
 	@use '../../styles/variables' as v;
 	@use '../../styles/breakpoints' as b;
-	
+
 	.projects {
 		padding-top: v.$padding-md;
 		padding-bottom: v.$padding-md;

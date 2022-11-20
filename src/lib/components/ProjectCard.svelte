@@ -9,18 +9,18 @@
 
 <div class="card project-root">
 	{#if project.github || project.link}
-	<div class="card__header">
-		{#if project.github}
-		<a href={project.github}>
-			<i class="fa-brands fa-github"></i>
-		</a>
-		{/if}
-		{#if project.link}
-		<a href={project.link}>
-			<i class="fa-solid fa-arrow-up-right-from-square"></i>
-		</a>
-		{/if}
-	</div>
+		<div class="card__header">
+			{#if project.github}
+				<a href={project.github}>
+					<i class="fa-brands fa-github" />
+				</a>
+			{/if}
+			{#if project.link}
+				<a href={project.link}>
+					<i class="fa-solid fa-arrow-up-right-from-square" />
+				</a>
+			{/if}
+		</div>
 	{/if}
 	<a class="card__main" href={`/projects/${project.slug}`}>
 		<p class="card__title">{project.title}</p>
@@ -39,10 +39,9 @@
 	.project-root {
 		width: 100%;
 		@include m.focus(var.$color-primary);
-		transition: box-shadow ease-in-out 0.15s,
-			transform ease-in-out 0.15s;
+		transition: box-shadow ease-in-out 0.15s, transform ease-in-out 0.15s;
 		border-radius: var.$border-radius;
-		
+
 		&:hover {
 			box-shadow: 3px 3px 6px rgba(black, 0.2);
 			transform: translate(0, -0.5rem);

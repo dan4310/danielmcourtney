@@ -47,24 +47,24 @@
 				</div>
 				<div>
 					<div style="flex-direction: row; gap: 8px; align-items: center;">
-						<i class="fa-solid fa-phone"></i>
+						<i class="fa-solid fa-phone" />
 						<span>917-328-6951</span>
 					</div>
 					<div style="flex-direction: row; gap: 8px; align-items: center;">
-						<i class="fa-regular fa-envelope"></i>
+						<i class="fa-regular fa-envelope" />
 						<span>dan4310@gmail.com</span>
 					</div>
 				</div>
 			</div>
 			<div class="footer__socials">
 				<a href="https://github.com/dan4310/">
-					<i class="fa fa-github"></i>
+					<i class="fa fa-github" />
 				</a>
 				<a href="https://www.linkedin.com/in/daniel-c-a6407710b/">
-					<i class="fa-brands fa-linkedin"></i>
+					<i class="fa-brands fa-linkedin" />
 				</a>
 				<a href="/documents/resume.pdf">
-					<i class="fa fa-file-pdf"></i>
+					<i class="fa fa-file-pdf" />
 				</a>
 			</div>
 		</div>

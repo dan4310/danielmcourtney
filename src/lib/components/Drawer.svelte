@@ -25,7 +25,13 @@
 		>
 			<DialogTitle>
 				<div class="drawer__header">
-					<button type="button" aria-label="Close" aria-labelledby="closeMenuLabel" class="btn-round" on:click={() => dispatch('close')}>
+					<button
+						type="button"
+						aria-label="Close"
+						aria-labelledby="closeMenuLabel"
+						class="btn-round"
+						on:click={() => dispatch('close')}
+					>
 						<div id="closeMenuLabel" style="display: none">Close Menu</div>
 						<i class="fa fa-x" />
 					</button>
