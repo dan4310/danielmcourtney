@@ -25,17 +25,13 @@
 		margin-top: var.$padding;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		gap: var.$padding-md;
 	}
 
 	@include b.break(md) {
 		.projects-container {
-			display: flex;
-			flex-wrap: wrap;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: start;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 </style>

@@ -18,9 +18,11 @@
 						</div>
 						<small class="job__dates">{job.location}</small>
 					</div>
-					<div class="job__description">
-						<p>{job.description}</p>
-					</div>
+					<ul class="job__description">
+						{#each job.details as detail}
+							<li>{detail}</li>
+						{/each}
+					</ul>
 					<div class="job__footer">
 						<small class="job__dates"
 							>{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small
@@ -53,6 +55,12 @@
 
 <style lang="scss">
 	@use '../../styles/variables' as var;
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: var.$padding-lg;
+	}
 
 	h1 {
 		font-size: var.$font-size-lg;
@@ -91,6 +99,14 @@
 
 		.job__description {
 			font-size: var.$font-size-sm;
+			display: flex;
+			flex-direction: column;
+			gap: var.$padding-xs;
+			padding-left: var.$padding-md;
+			li {
+				display: list-item;
+				list-style-type: circle;
+			}
 		}
 
 		.job__dates {

@@ -2,7 +2,7 @@ export type Job = {
 	id: number
 	company: string
 	position: string
-	description: string
+	details: string[]
 	location: string
 	startDate: string
 	endDate: string
@@ -21,8 +21,9 @@ export type Project = {
 	id: number
 	slug: string
 	title: string
-	short: string
 	description: string
 	tags: string
 	image: string
+	link?: string
+	github?: string
 }
