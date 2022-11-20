@@ -18,8 +18,8 @@
 </div>
 
 <style lang="scss">
-	@use '../../styles/variables' as var;
-	@use '../../styles/breakpoints' as b;
+	@use '../../../styles/variables' as var;
+	@use '../../../styles/breakpoints' as b;
 
 	.projects-container {
 		margin-top: var.$padding;

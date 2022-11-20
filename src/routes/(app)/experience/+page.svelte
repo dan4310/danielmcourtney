@@ -55,7 +55,7 @@
 </div>
 
 <style lang="scss">
-	@use '../../styles/variables' as var;
+	@use '../../../styles/variables' as var;
 
 	main {
 		display: flex;

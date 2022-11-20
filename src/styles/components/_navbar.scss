@@ -38,4 +38,31 @@
 		align-items: center;
 		gap: var.$padding;
 	}
+
+	.btn-sidemenu {
+		@include b.break(md) {
+			display: none;
+		}
+	}
 }
+
+.sidemenu {
+	display: flex;
+	flex-direction: column;
+	gap: var.$padding-md;
+	padding: var.$padding;
+	overflow-y: scroll;
+	li {
+		display: flex;
+		&:hover {
+			color: var.$theme-text-muted;
+		}
+	}
+	.sidemenu__link {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+

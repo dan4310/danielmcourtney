@@ -27,3 +27,8 @@ export type Project = {
 	link?: string
 	github?: string
 }
+
+export type Admin = {
+	username: string
+	password: string
+}

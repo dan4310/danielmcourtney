@@ -40,8 +40,8 @@ import type { PageData } from './$types'
 </main>
 
 <style lang="scss">
-	@use '../styles/variables' as v;
-	@use '../styles/breakpoints' as b;
+	@use '../../styles/variables' as v;
+	@use '../../styles/breakpoints' as b;
 	
 	.projects {
 		padding-top: v.$padding-md;

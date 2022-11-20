@@ -44,7 +44,7 @@
 </div>
 
 <style lang="scss">
-	@use '../../styles/variables' as var;
+	@use '../../../styles/variables' as var;
 
 	h1 {
 		margin-bottom: var.$padding-lg;
