@@ -46,6 +46,22 @@ import type { PageData } from './$types'
 	.projects {
 		padding-top: v.$padding-md;
 		padding-bottom: v.$padding-md;
+		display: flex;
+		flex-direction: column;
+		gap: v.$padding;
+		.projects__header {
+			display: flex;
+			flex-direction: column;
+			gap: v.$padding-xs;
+			a {
+				text-decoration: underline;
+				transition: color ease-in-out 0.15s;
+				font-size: v.$font-size-sm;
+				&:hover {
+					color: v.$color-primary;
+				}
+			}
+		}
 		.projects__container {
 			display: flex;
 			gap: v.$padding;
