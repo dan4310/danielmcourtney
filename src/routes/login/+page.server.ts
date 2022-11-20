@@ -16,7 +16,9 @@ export const actions: Actions = {
         if (password !== ADMIN_PASS) return invalid(400, { message: "Password does not match for that user" })
 
         cookies.set(ADMIN_SESSION_NAME, createAdminSession({ username, password }), {
-
+            sameSite: true,
+            secure: true,
+            path: '/'
         })
         if (url.searchParams.has('redirectTo'))
             throw redirect(303, String(url.searchParams.get('redirectTo')))

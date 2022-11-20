@@ -1,33 +1,9 @@
 import type { Education, Job, Project } from '$lib/types'
 import fs from 'fs'
 import path from 'path'
+import { readJson, readFile } from '$lib/server/util'
 
-export async function readJson<T>(path: string): Promise<T> {
-	return new Promise((resolve, reject) => {
-		fs.readFile(path, (err, jsonString) => {
-			if (err) {
-				return reject(err)
-			}
-			try {
-				const data = JSON.parse(jsonString.toString()) as T
-				resolve(data)
-			} catch (err) {
-				reject(err)
-			}
-		})
-	})
-}
 
-export async function readFile(path: string): Promise<string> {
-	return new Promise((resolve, reject) => {
-		fs.readFile(path, (err, data) => {
-			if (err) {
-				return reject(err)
-			}
-			resolve(data.toString())
-		})
-	})
-}
 
 interface BaseEntity {
 	id: number
