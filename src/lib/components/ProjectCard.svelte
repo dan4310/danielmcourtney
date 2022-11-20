@@ -46,9 +46,6 @@
 		&:hover {
 			box-shadow: 3px 3px 6px rgba(black, 0.2);
 			transform: translate(0, -0.5rem);
-			.card__title {
-				text-decoration: underline;
-			}	
 		}
 	}
 	.card {
@@ -66,10 +63,10 @@
 		.card__header {
 			display: flex;
 			justify-content: end;
-			gap: var.$padding;
+			gap: var.$padding-md;
 
 			a {
-				font-size: 22px;
+				font-size: 25px;
 				transition: color ease-in-out 0.15s;
 				&:hover {
 					color: var.$color-primary;
@@ -80,6 +77,11 @@
 			display: flex;
 			flex-direction: column;
 			gap: var.$padding-xs;
+			&:hover {
+				.card__title {
+					text-decoration: underline;
+				}
+			}
 
 			.card__title {
 				font-size: var.$font-size;
@@ -92,6 +94,7 @@
 		}
 		.card__footer {
 			font-size: var.$font-size-sm;
+			margin-top: auto;
 			display: flex;
 			gap: var.$padding-xs;
 			color: var.$theme-text-muted;
