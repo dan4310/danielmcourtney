@@ -4,4 +4,12 @@ body {
 	background-color: var.$theme-background;
 	color: var.$theme-text;
 	font-family: var.$font-family-primary;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+hr {
+	border-color: var.$theme-divider;
 }

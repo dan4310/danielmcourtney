@@ -29,6 +29,7 @@
 						>
 					</div>
 				</div>
+				<hr />
 			{/each}
 		</section>
 		<section>
@@ -93,7 +94,7 @@
 
 		.job__position {
 			font-weight: 900;
-			color: lighten(var.$color-primary, 50);
+			color: var.$color-primary;
 			font-size: var.$font-size-sm;
 		}
 

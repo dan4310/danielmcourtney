@@ -42,9 +42,13 @@
 		transition: box-shadow ease-in-out 0.15s,
 			transform ease-in-out 0.15s;
 		border-radius: var.$border-radius;
+		
 		&:hover {
 			box-shadow: 3px 3px 6px rgba(black, 0.2);
 			transform: translate(0, -0.5rem);
+			.card__title {
+				text-decoration: underline;
+			}	
 		}
 	}
 	.card {
@@ -79,7 +83,8 @@
 
 			.card__title {
 				font-size: var.$font-size;
-				color: lighten(var.$color-primary, 50);
+				color: var.$color-primary;
+				transition: text-decoration ease-in-out 0.15s;
 			}
 			.card__body {
 				font-size: var.$font-size-sm;
