@@ -1,8 +1,8 @@
 #!/bin/bash
 
 docker run -d \
---name mywebsite \
--v mywebsite-vol:/app/data \
+--name danielmcourtney \
+-v danielmcourtney-vol:/app/data \
 -p 8080:3000 \
 --env-file ./.env \
-mywebsite
+dan4310/danielmcourtney

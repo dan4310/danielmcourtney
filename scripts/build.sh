@@ -1,5 +1,3 @@
 #!/bin/bash
 
-docker image rm mywebsite
-
-docker build . -t mywebsite
+docker build . -t dan4310/danielmcourtney
