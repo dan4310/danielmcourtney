@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { MY_GITHUB } from '$lib/config'
-import type { Project } from '$lib/types'
+	import type { Project } from '@prisma/client'
 
 	export let project: Project
 
-	$: tagArr = project.tags.split('#')
-	$: tags = tagArr.slice(1, tagArr.length)
+	$: tagArr = project.tags?.split('#')
+	$: tags = tagArr?.slice(1, tagArr.length)
 </script>
 
 <div class="card project-root">
@@ -28,9 +28,11 @@ import type { Project } from '$lib/types'
 		<p class="card__body">{project.description}</p>
 	</a>
 	<div class="card__footer">
-		{#each tags as tag (tag)}
-			<span>#{tag}</span>
-		{/each}
+		{#if tags}
+			{#each tags as tag (tag)}
+				<span>#{tag}</span>
+			{/each}
+		{/if}
 	</div>
 </div>
 
@@ -80,15 +82,14 @@ import type { Project } from '$lib/types'
 			&:hover {
 				.card__title {
 					text-decoration: underline;
-					color: lighten(var.$color-primary, 20)
+					color: lighten(var.$color-primary, 20);
 				}
 			}
 
 			.card__title {
 				font-size: var.$font-size;
 				color: var.$color-primary;
-				transition: text-decoration ease-in-out 0.15s,
-					color ease-in-out 0.1s;
+				transition: text-decoration ease-in-out 0.15s, color ease-in-out 0.1s;
 			}
 			.card__body {
 				font-size: var.$font-size-sm;

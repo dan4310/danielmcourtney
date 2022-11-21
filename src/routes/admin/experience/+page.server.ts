@@ -1,9 +1,9 @@
-import { Jobs } from '$lib/server/jsondb'
+import { db } from '$lib/server/db'
 import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async () => {
-    const jobs = await Jobs.getAll()
-    return {
-        jobs,
-    }
+	const jobs = await db.job.findMany()
+	return {
+		jobs
+	}
 }

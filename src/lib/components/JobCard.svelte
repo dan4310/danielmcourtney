@@ -1,49 +1,46 @@
 <script lang="ts">
-	import type { Job } from "$lib/types"
+	import type { Job } from '@prisma/client'
 
-
-    export let job: Job
-    $: detailsArr = job.details?.split('#')
-    $: details = detailsArr.slice(1, detailsArr.length)
+	export let job: Job
+	$: detailsArr = job.details?.split('#')
+	$: details = detailsArr?.slice(1, detailsArr.length)
 </script>
 
 <div class="job">
-    <div class="job__header">
-        {#if job.image}
-            <div class="job__image">
-                <img src={job.image} alt={job.company} loading="lazy" />
-            </div>
-        {/if}
-            <div class="job__title">
-                <div>
-                    {#if job.link}
-                        <a href={job.link} style="display: contents;">
-                            <h3>{job.company}</h3>
-                        </a>
-                    {:else}
-                        <h3>{job.company}</h3>
-                    {/if}
-                    <p class="job__position">{job.position?.toUpperCase()}</p>
-                </div>
-                <small class="job__dates">{job.location}</small>
-            </div>
-    </div>
-    <ul class="job__description">
-        {#each details as detail}
-            <li>{detail}</li>
-        {/each}
-    </ul>
-    <div class="job__footer">
-        <small class="job__dates"
-            >{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small
-        >
-    </div>
+	<div class="job__header">
+		{#if job.image}
+			<div class="job__image">
+				<img src={job.image} alt={job.company} loading="lazy" />
+			</div>
+		{/if}
+		<div class="job__title">
+			<div>
+				{#if job.link}
+					<a href={job.link} style="display: contents;">
+						<h3>{job.company}</h3>
+					</a>
+				{:else}
+					<h3>{job.company}</h3>
+				{/if}
+				<p class="job__position">{job.position?.toUpperCase()}</p>
+			</div>
+			<small class="job__dates">{job.location}</small>
+		</div>
+	</div>
+	<ul class="job__description">
+		{#each details as detail}
+			<li>{detail}</li>
+		{/each}
+	</ul>
+	<div class="job__footer">
+		<small class="job__dates">{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small>
+	</div>
 </div>
 
 <style lang="scss">
-    @use '../../styles/variables' as var;
+	@use '../../styles/variables' as var;
 
-    .job {
+	.job {
 		display: flex;
 		flex-direction: column;
 		gap: var.$padding-sm;

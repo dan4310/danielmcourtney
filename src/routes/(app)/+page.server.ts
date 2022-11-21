@@ -1,10 +1,12 @@
-import { Projects } from '$lib/server/jsondb'
+import { db } from '$lib/server/db'
 import type { PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async () => {
-	const featuredProjects = await Projects.getAll()
+	const featuredProjects = await db.project.findMany({
+		take: 3
+	})
 
 	return {
-		featuredProjects: featuredProjects.slice(0, 3)
+		featuredProjects: featuredProjects
 	}
 }

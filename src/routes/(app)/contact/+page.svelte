@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MY_EMAIL } from "$lib/config"
+	import { MY_EMAIL } from '$lib/config'
 
 	let to = MY_EMAIL
 	let subject = 'New Opportunity'

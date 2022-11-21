@@ -22,7 +22,6 @@
 		"id": 3,
 		"title": "FilmCritic",
 		"slug": "film-critic",
-		"short": "Social media web app for film & TV reviews.",
 		"description": "Social media for film and TV reviews.",
 		"image": "/images/filmCriticHome.png",
 		"tags": "#React#HTML#CSS#Redux.js#Fullstack",

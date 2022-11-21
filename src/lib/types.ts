@@ -1,37 +1,3 @@
-export type Job = {
-	id: number
-	company: string
-	position: string
-	details: string
-	location: string
-	startDate: string
-	endDate: string
-	image?: string
-	link?: string
-}
-
-export type Education = {
-	id: number
-	name: string
-	degree: string
-	description?: string
-	startDate: string
-	endDate?: string
-	image?: string
-	link?: string
-}
-
-export type Project = {
-	id: number
-	slug: string
-	title: string
-	description: string
-	tags: string
-	image: string
-	link?: string
-	github?: string
-}
-
 export type AboutData = {
 	title: string
 	subtitle: string

@@ -24,7 +24,7 @@
 		text-decoration: underline;
 		color: var.$color-primary;
 		&:hover {
-			color: ligthen(var.$color-primary, 5)
+			color: ligthen(var.$color-primary, 5);
 		}
 	}
 
@@ -55,7 +55,8 @@
 		gap: var.$padding-xs;
 	}
 
-	th, td {
+	th,
+	td {
 		padding: var.$padding-xs;
 		font-size: var.$font-size-sm;
 		border-radius: var.$border-radius;
@@ -88,5 +89,4 @@
 			text-align: start;
 		}
 	}
-	
 }

@@ -7,10 +7,10 @@
 	"private": true,
 	"main": "build/index.js",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "MODE=dev vite dev",
 		"build": "vite build",
 		"start": "node .",
-		"preview": "vite preview",
+		"preview": "MODE=dev vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
@@ -24,12 +24,14 @@
 		"@types/jsonwebtoken": "^8.5.9",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
+		"dotenv-cli": "^6.0.0",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"prisma": "^4.6.1",
 		"rehype-stringify": "^9.0.3",
 		"remark-gfm": "^3.0.1",
 		"remark-parse": "^10.0.1",
@@ -41,7 +43,8 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"unified": "^10.1.2",
-		"vite": "^3.1.0"
+		"vite": "^3.1.0",
+		"@prisma/client": "^4.6.1"
 	},
 	"type": "module"
 }

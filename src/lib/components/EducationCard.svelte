@@ -1,41 +1,41 @@
 <script lang="ts">
-	import type { Education } from "$lib/types"
+	import type { Education } from '@prisma/client'
 
-    export let education: Education
+	export let education: Education
 </script>
 
 <div class="job">
-    <div class="job__header">
-        {#if education.image}
-            <div class="job__image">
-                <img src={education.image} alt={education.name} loading="lazy" />
-            </div>
-        {/if}
-        <div class="job__title">
-            <div>
-                {#if education.link}
-                    <a href={education.link} style="display: contents;">
-                        <h3>{education.name}</h3>
-                    </a>
-                {:else}
-                    <h3>{education.name}</h3>
-                {/if}
-                <p class="job__position">{education.degree}</p>
-            </div>
-            <small class="job__dates">
-                {education.startDate} - {education.endDate ? education.endDate : 'Present'}
-            </small>
-        </div>
-    </div>
-    <div class="job__description">
-        <p>{education.description}</p>
-    </div>
+	<div class="job__header">
+		{#if education.image}
+			<div class="job__image">
+				<img src={education.image} alt={education.name} loading="lazy" />
+			</div>
+		{/if}
+		<div class="job__title">
+			<div>
+				{#if education.link}
+					<a href={education.link} style="display: contents;">
+						<h3>{education.name}</h3>
+					</a>
+				{:else}
+					<h3>{education.name}</h3>
+				{/if}
+				<p class="job__position">{education.degree}</p>
+			</div>
+			<small class="job__dates">
+				{education.startDate} - {education.endDate ? education.endDate : 'Present'}
+			</small>
+		</div>
+	</div>
+	<div class="job__description">
+		<p>{education.description}</p>
+	</div>
 </div>
 
 <style lang="scss">
-    @use '../../styles/variables' as var;
+	@use '../../styles/variables' as var;
 
-    .job {
+	.job {
 		display: flex;
 		flex-direction: column;
 		gap: var.$padding-sm;

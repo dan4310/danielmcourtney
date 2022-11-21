@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeStringify from 'rehype-stringify'
 
 type SuppliedData = {
-	[key: string]: string | number
+	[key: string]: string | number | null | boolean
 }
 
 export async function converToHTML(markdown: string, data: SuppliedData = {}): Promise<string> {
@@ -23,7 +23,7 @@ function searchAndReplace(content: string, data: SuppliedData = {}): string {
 	const keys = Object.keys(data)
 	for (let i = 0; i < keys.length; i++) {
 		const key = keys[i]
-		content = content.replaceAll('$' + key.toUpperCase(), data[key].toString())
+		content = content.replaceAll('$' + key.toUpperCase(), String(data[key]))
 	}
 	return content
 }

@@ -5,8 +5,10 @@ node_modules
 /package
 .env
 .env.*
+prisma/migrations
 
 data
+prisma
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
