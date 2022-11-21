@@ -8,6 +8,7 @@
 	padding: var.$padding-sm;
 	position: sticky;
 	top: 0;
+	z-index: 10;
 
 	&.active {
 		background-color: var.$theme-background;

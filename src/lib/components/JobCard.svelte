@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Job } from '@prisma/client'
+	import moment from 'moment'
 
 	export let job: Job
 	$: detailsArr = job.details?.split('#')
@@ -28,12 +29,18 @@
 		</div>
 	</div>
 	<ul class="job__description">
-		{#each details as detail}
-			<li>{detail}</li>
-		{/each}
+		{#if details}
+			{#each details as detail}
+				<li>{detail}</li>
+			{/each}
+		{/if}
 	</ul>
 	<div class="job__footer">
-		<small class="job__dates">{job.startDate} - {job.endDate ? job.endDate : 'Present'}</small>
+		<small class="job__dates">
+			{moment(job.startDate).format('MMMM YYYY')}
+			-
+			{job.endDate < new Date(Date.now()) ? moment(job.endDate).format('MMMM YYYY') : 'Present'}
+		</small>
 	</div>
 </div>
 

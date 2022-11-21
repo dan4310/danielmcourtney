@@ -16,7 +16,7 @@ model Job {
   position String
   details String? @db.VarChar(500)
   startDate DateTime
-  endDate DateTime?
+  endDate DateTime
   image String?
   link String?
   location String
@@ -28,7 +28,7 @@ model Education {
   degree String
   description String?
   startDate DateTime
-  endDate DateTime?
+  endDate DateTime
   image String?
   link String?
 }

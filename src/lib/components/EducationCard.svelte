@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Education } from '@prisma/client'
+	import moment from 'moment'
 
 	export let education: Education
 </script>
@@ -23,7 +24,11 @@
 				<p class="job__position">{education.degree}</p>
 			</div>
 			<small class="job__dates">
-				{education.startDate} - {education.endDate ? education.endDate : 'Present'}
+				{moment(education.startDate).format('MMMM YYYY')}
+				-
+				{education.endDate < new Date(Date.now())
+					? moment(education.endDate).format('MMMM YYYY')
+					: 'Present'}
 			</small>
 		</div>
 	</div>

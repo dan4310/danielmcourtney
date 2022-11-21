@@ -34,6 +34,6 @@ VALUES
     '#Python#Stocks',
     NULL,
     '/images/filmCriticHome.png',
-    NULL,
+    'AlpacaTradingBot',
     'Python Stock Trader'
 );

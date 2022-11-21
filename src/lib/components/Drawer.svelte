@@ -54,6 +54,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: rgba(black, 0.5);
+		z-index: 100;
 	}
 
 	.drawer {
