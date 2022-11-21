@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Drawer from '$lib/components/Drawer.svelte'
-	import { MY_EMAIL, MY_GITHUB } from '$lib/config'
+	import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from '$lib/config'
 	let scrollY = 0
 
 	let open = false
@@ -62,7 +62,7 @@
 			<a href={MY_GITHUB}>
 				<i class="fa fa-github" />
 			</a>
-			<a href="https://www.linkedin.com/in/daniel-c-a6407710b/">
+			<a href={MY_LINKEDIN}>
 				<i class="fa-brands fa-linkedin" />
 			</a>
 			<a href="/documents/resume.pdf">

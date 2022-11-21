@@ -32,6 +32,13 @@ export type Project = {
 	github?: string
 }
 
+export type AboutData = {
+	title: string
+	subtitle: string
+	description: string
+	image: string
+}
+
 export type Admin = {
 	username: string
 	password: string

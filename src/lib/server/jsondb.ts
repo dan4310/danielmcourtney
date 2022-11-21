@@ -1,4 +1,4 @@
-import type { Education, Job, Project } from '$lib/types'
+import type { AboutData, Education, Job, Project } from '$lib/types'
 import path from 'path'
 import { readJson, readFile } from '$lib/server/util'
 
@@ -67,6 +67,21 @@ class DBPostsSet<T extends BasePostEntity> extends DBSet<T> {
 	}
 }
 
+class DBItem<T> {
+	protected static basePath = 'data'
+	protected _pathToJson: string
+
+	constructor(name: string) {
+		this._pathToJson = path.resolve(DBItem.basePath, name + '.json')
+	}
+
+	public async get(): Promise<T> {
+		console.log(this._pathToJson)
+		return await readJson<T>(this._pathToJson)
+	}
+}
+
 export const Jobs = new DBSet<Job>('jobs')
 export const Educations = new DBSet<Education>('educations')
 export const Projects = new DBPostsSet<Project>('projects')
+export const About = new DBItem<AboutData>('about')
