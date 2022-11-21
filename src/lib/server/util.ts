@@ -26,3 +26,13 @@ export async function readFile(path: string): Promise<Buffer> {
 		})
 	})
 }
+
+export async function writeJson(path: string, object: object) {
+	return new Promise((resolve, reject) => {
+		const data = JSON.stringify(object)
+
+		fs.writeFile(path, data, (data) => {
+			resolve(data)
+		})
+	})
+}

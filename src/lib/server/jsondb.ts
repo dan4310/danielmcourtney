@@ -1,6 +1,6 @@
 import type { AboutData, Education, Job, Project } from '$lib/types'
 import path from 'path'
-import { readJson, readFile } from '$lib/server/util'
+import { readJson, readFile, writeJson } from '$lib/server/util'
 
 interface BaseEntity {
 	id: number
@@ -25,7 +25,7 @@ class DBSet<T extends BaseEntity> {
 	}
 
 	public async getOne(id: number): Promise<T | null> {
-		await this.checkCahe()
+		await this.checkCache()
 
 		for (let i = 0; i < this._cache.length; i++) {
 			if (this._cache[i].id === id) return this._cache[i]
@@ -33,7 +33,19 @@ class DBSet<T extends BaseEntity> {
 		return null
 	}
 
-	protected async checkCahe() {
+	public async create(partial: Partial<T>): Promise<T> {
+		await this.checkCache()
+		let maxId = 0
+		for (let i = 0; i < this._cache.length; i++) {
+			if (this._cache[i].id > maxId) maxId = this._cache[i].id
+		}
+		const newItem = { ...partial, id: maxId + 1 } as T
+		this._cache.push(newItem)
+		writeJson(this._pathToJson, this._cache)
+		return newItem
+	}
+
+	protected async checkCache() {
 		if (this._cache.length === 0) await this.getAll()
 	}
 }
@@ -44,7 +56,7 @@ interface BasePostEntity extends BaseEntity {
 
 class DBPostsSet<T extends BasePostEntity> extends DBSet<T> {
 	public async getOneBySlug(slug: string): Promise<T | null> {
-		await this.checkCahe()
+		await this.checkCache()
 		for (let i = 0; i < this._cache.length; i++) {
 			if (this._cache[i].slug === slug) return this._cache[i]
 		}
@@ -52,7 +64,7 @@ class DBPostsSet<T extends BasePostEntity> extends DBSet<T> {
 	}
 
 	public async getPost(slug: string): Promise<string | null> {
-		await this.checkCahe()
+		await this.checkCache()
 		for (let i = 0; i < this._cache.length; i++) {
 			if (this._cache[i].slug === slug) {
 				try {
