@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MY_EMAIL } from '$lib/config'
+	import { MY_EMAIL, MY_GITHUB, MY_LINKEDIN } from '$lib/config'
 
 	let to = MY_EMAIL
 	let subject = 'New Opportunity'
@@ -14,6 +14,23 @@
 <div class="page">
 	<main class="page__container-md">
 		<h1>Get in touch with me.</h1>
+		<ul class="socials">
+			<li>
+				<a href="{MY_GITHUB}">
+					<i class="fa-brands fa-github"></i>
+				</a>
+			</li>
+			<li>
+				<a href="{MY_LINKEDIN}">
+					<i class="fa-brands fa-linkedin"></i>
+				</a>
+			</li>
+			<li>
+				<a href="/documents/resume.pdf">
+					<i class="fa-solid fa-file-pdf"></i>
+				</a>
+			</li>
+		</ul>
 		<form on:submit|preventDefault={submit}>
 			<div class="form-label">
 				<label for="to">To:</label>
@@ -48,8 +65,26 @@
 <style lang="scss">
 	@use '../../../styles/variables' as var;
 
+	.socials {
+		display: flex;
+		font-size: 45px;
+		align-items: center;
+		gap: var.$padding-lg;
+		a {
+			transition: color ease-in-out 0.25s;
+			&:hover {
+				color: var.$color-primary;
+			}
+		}
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: var.$padding-lg;
+	}
+
 	h1 {
-		margin-bottom: var.$padding-lg;
 		font-size: var.$font-size-lg;
 	}
 

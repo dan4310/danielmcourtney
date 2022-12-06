@@ -85,7 +85,6 @@
 		background-color: var.$theme-foreground;
 		margin-top: 5rem;
 		padding: var.$padding-sm;
-		border-top: var.$border-thickness solid var.$theme-divider;
 		display: flex;
 		flex-direction: column;
 		gap: var.$padding-lg;
