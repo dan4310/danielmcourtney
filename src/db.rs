@@ -57,4 +57,4 @@ where
     }
 }
 
-pub static CONFIG: OnceLock<Config> = OnceLock::new();
+pub static CONFIG_STORE: OnceLock<JsonStore<Config>> = OnceLock::new();
