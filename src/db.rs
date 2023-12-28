@@ -12,6 +12,14 @@ pub struct Config {
     pub git_url: String
 }
 
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Experience {
+    pub title: String,
+    pub position: String,
+    pub start_date: String,
+    pub end_date: String
+}
+
 #[derive(Debug)]
 pub struct JsonStore<T>
 where

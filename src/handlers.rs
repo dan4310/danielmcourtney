@@ -1,5 +1,5 @@
 use actix_web::{HttpResponse, http::{header::ContentType, StatusCode}, web, ResponseError};
-use crate::{tmpl::{Tmpl, Error as TmplError, TMPL}, db::{Config, CONFIG}};
+use crate::{tmpl::{Tmpl, Error as TmplError, TMPL}, db::{Config, CONFIG, Experience}};
 
 #[derive(Debug)]
 pub enum Error {
@@ -63,6 +63,13 @@ pub async fn home_page(tmpl: web::Data<&Tmpl>, config: web::Data<&Config>) -> Re
 
 pub async fn contact_page(tmpl: web::Data<&Tmpl>, config: web::Data<&Config>) -> Result<HttpResponse> {
     let t = tmpl.render_contact_page(&config)?;
+    Ok(HttpResponse::build(StatusCode::OK)
+       .content_type(ContentType::html())
+       .body(t))
+}
+
+pub async fn experience_page(tmpl: web::Data<&Tmpl>, config: web::Data<&Config>, exp: web::Data<Vec<Experience>>) -> Result<HttpResponse> {
+    let t = tmpl.render_experience_page(&config, &exp)?;
     Ok(HttpResponse::build(StatusCode::OK)
        .content_type(ContentType::html())
        .body(t))

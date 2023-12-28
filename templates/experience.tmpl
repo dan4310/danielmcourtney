@@ -1,0 +1,11 @@
+{% extends "layout_base.tmpl" %}
+{% block title %}Experience &bull; {{ super() }}{% endblock title %}
+{% block content %}
+<h1>Experience</h1>
+{% for exp in experiences %}
+<h4>{{ exp.title }}</h4>
+<p>{{ exp.position }}</p>
+<p>{{ exp.start_date }} - {% if exp.end_date | length == 0 -%} Current {%- else -%} {{ exp.end_date }} {%- endif -%}
+</p>
+{% endfor %}
+{% endblock content %}

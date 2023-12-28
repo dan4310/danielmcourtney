@@ -1,7 +1,7 @@
 use std::sync::OnceLock;
 use tera::{Tera, Error as TeraError};
 
-use crate::db::Config;
+use crate::db::{Config, Experience};
 
 #[derive(Debug)]
 pub struct Error(TeraError);
@@ -64,6 +64,12 @@ impl Tmpl {
         ctx.insert("status", &status);
         ctx.insert("message", message);
         self.render_page("error.tmpl", &mut ctx, config)
+    }
+
+    pub fn render_experience_page(&self, config: &Config, exp: &Vec<Experience>) -> Result<String> {
+        let mut ctx = tera::Context::new();
+        ctx.insert("experiences", &exp);
+        self.render_page("experience.tmpl", &mut ctx, &config)
     }
 }
 
