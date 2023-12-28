@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 {% block head -%}
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/fontawesome6/css/all.min.css" />
     <title>{% block title %}{{ config.first_name }} {{ config.last_name }}{% endblock title %}</title>
 {% endblock head -%}
 </head>
@@ -10,16 +13,20 @@
     <header>
     <nav>
         <a href="/">{{ config.first_name }}</a>
-        <a href="/contact">Contact</a>
         <a href="/experience">Experience</a>
+        <a href="/contact">Contact</a>
     </nav>
     </header>
     {%- block content -%}{%- endblock content -%}
     <footer>
         <div>
             <nav>
-                <a href="{{ config.git_url }}">My Git Server</a>
-                <a href="https://github.com/{{ config.github }}">My Github</a>
+                <ul>
+                    <li><i class="fa-brands fa-git-alt"></i> <a href="{{ config.git_url }}">My Git Server</a></li>
+                    <li><i class="fa-brands fa-square-github"></i> <a href="https://github.com/{{ config.github }}">My Github</a></li>
+                    <li><i class="fa-brands fa-linkedin"></i> <a href="{{ config.linkedin_url }}">My LinkedIn</a></li>
+                    <li><i class="fa-solid fa-file-pdf"></i> <a href="/resume.pdf#">Resume</a></li>
+                </ul>
             </nav>
         </div>
         <div style="display: flex; justify-content: space-between; flex-direction: row">

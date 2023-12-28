@@ -2,9 +2,15 @@
 {% block title %}Experience &bull; {{ super() }}{% endblock title %}
 {% block content %}
 <h1>Experience</h1>
-{% for exp in experiences %}
-<h4>{{ exp.title }}</h4>
-<p>{{ exp.position }}</p>
+{% for exp in experiences | sort(attribute="start_date") | reverse %}
+<h4 id="{{ exp.title | slugify }}">{{ exp.title }}</h4>
+<p><i>{{ exp.position }}</i></p>
+<p>{{ exp.location }}</p>
+<ul>
+{% for detail in exp.details -%}
+<li>{{ detail }}</li>
+{% endfor -%}
+</ul>
 <p>{{ exp.start_date }} - {% if exp.end_date | length == 0 -%} Current {%- else -%} {{ exp.end_date }} {%- endif -%}
 </p>
 {% endfor %}

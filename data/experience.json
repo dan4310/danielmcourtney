@@ -2,12 +2,24 @@
     {
         "title": "Manhattan District Attorney",
         "position": "Software Engineer",
+        "location": "New York, NY",
+        "details": [
+            "Maintained and added features to one of the largest applications for tracking and managing cases.",
+            "Worked with <a href=\"https://www.axon.com/\">Axon</a> API to download body camera footage and integrate with internal viewing/management application.",
+            "Integrated NYPD body camera footage & Rikers calls with <a href=\"https://www.assemblyai.com/\">AssemblyAi</a> to transcribe 10,000 hours a month of video/audio.",
+            "Resolved incident/bug reports."
+        ],
         "start_date": "2021/08/09",
         "end_date": ""
     },
     {
         "title": "Paysfer eMart",
         "position": "Software Developer",
+        "location": "New York, NY",
+        "details": [
+            "Built a responsive authentication page, navigation bar and header for the start-up ecommerce company.",
+            "Wrote scripts which included creating an intersection observer to lazy load images on the home-page to reduce loading time."
+        ],
         "start_date": "2021/06/09",
         "end_date": "2021/07/04"
     }

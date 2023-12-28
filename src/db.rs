@@ -9,13 +9,16 @@ pub struct Config {
     pub domain: String,
     pub site_name: String,
     pub github: String,
-    pub git_url: String
+    pub git_url: String,
+    pub linkedin_url: String
 }
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Experience {
     pub title: String,
     pub position: String,
+    pub location: String,
+    pub details: Vec<String>,
     pub start_date: String,
     pub end_date: String
 }
