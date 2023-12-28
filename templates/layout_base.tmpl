@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head -%}
+    <link rel="stylesheet" href="styles.css" />
+    <title>{% block title %}{{ config.first_name }} {{ config.last_name }}{% endblock title %}</title>
+{% endblock head -%}
+</head>
+<body>
+    <header>
+    <nav>
+        <a href="/">{{ config.first_name }}</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    </header>
+    {%- block content -%}{%- endblock content -%}
+    <footer>
+        <div>
+            <nav>
+                <a href="{{ config.git_url }}">My Git Server</a>
+                <a href="https://github.com/{{ config.github }}">My Github</a>
+            </nav>
+        </div>
+        <div style="display: flex; justify-content: space-between; flex-direction: row">
+            <span>Copyright &copy; 2023 <a href="https://{{ config.site_name }}.{{ config.domain }}">{{ config.site_name }}.{{ config.domain }}</a></span>
+            <span>{{ config.email }}</span>
+        </div>
+    </footer>
+</body>
+</html>

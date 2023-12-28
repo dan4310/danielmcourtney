@@ -1,0 +1,37 @@
+:root {
+    --clr-primary-1: hsla(241, 50%, 40%, 1);
+    --clr-primary-2: hsla(241, 50%, 50%, 1);
+    --clr-primary-3: hsla(241, 50%, 60%, 1);
+
+    --clr-bg-2: hsla(210, 0%, 90%, 1);
+    --clr-fg-2: hsla(210, 0%, 10%, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-bg-2: hsla(210, 0%, 10%, 1);
+        --clr-fg-2: hsla(210, 0%, 90%, 1);
+    }
+}
+
+body {
+    background-color: var(--clr-bg-2);
+    color: var(--clr-fg-2);
+}
+
+input, textarea {
+    background-color: var(--clr-bg-2);
+    color: var(--clr-fg-2);
+}
+
+a {
+    color: var(--clr-primary-2);
+}
+
+a:hover, a:visited {
+    color: var(--clr-primary-1);
+}
+
+a:active {
+    color: var(--clr-primary-3);
+}

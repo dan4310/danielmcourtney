@@ -1,0 +1,17 @@
+{% extends "layout_base.tmpl" %}
+{% block title %}Contact - {{ super() }}{% endblock %}
+{% block content %}
+<h1>Contact</h1>
+<form method="POST">
+    <div>
+        <label for="email">From:</label>
+        <input id="email" type="email" name="email" required />
+    </div>
+    <div>
+        <label for="subject">Subject:</label>
+        <input id="subject" type="text" name="subject" required />
+    </div>
+    <textarea id="body" name="body" required></textarea>
+    <button type="submit">Send</button>
+</form>
+{% endblock content %}
