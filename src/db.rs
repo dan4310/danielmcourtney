@@ -44,7 +44,7 @@ where
     }
 
     pub fn path(&self) -> &Path {
-        &Path::new(&self.path)
+        Path::new(&self.path)
     }
 
     pub fn file(&self) -> std::io::Result<File> {

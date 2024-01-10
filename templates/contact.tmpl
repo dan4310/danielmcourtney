@@ -2,6 +2,9 @@
 {% block title %}Contact &bull; {{ super() }}{% endblock %}
 {% block content %}
 <h1>Contact</h1>
+{% if message %}
+<p>{{ message }}</p>
+{% endif %}
 <form method="POST">
     <div>
         <label for="email">From:</label>

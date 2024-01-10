@@ -54,8 +54,11 @@ impl Tmpl {
         self.render_page("home.tmpl", &mut ctx, config)
     }
 
-    pub fn render_contact_page(&self, config: &Config) -> Result<String> {
+    pub fn render_contact_page(&self, config: &Config, message: Option<&str>) -> Result<String> {
         let mut ctx = tera::Context::new();
+        if let Some(msg) = message {
+            ctx.insert("message", msg);
+        }
         self.render_page("contact.tmpl", &mut ctx, config)
     }
 
@@ -69,7 +72,7 @@ impl Tmpl {
     pub fn render_experience_page(&self, config: &Config, exp: &Vec<Experience>) -> Result<String> {
         let mut ctx = tera::Context::new();
         ctx.insert("experiences", &exp);
-        self.render_page("experience.tmpl", &mut ctx, &config)
+        self.render_page("experience.tmpl", &mut ctx, config)
     }
 }
 

@@ -1,5 +1,7 @@
 use actix_web::{HttpResponse, http::{header::ContentType, StatusCode}, web, ResponseError};
+use sqlx::{Pool, MySql};
 use crate::{tmpl::{Tmpl, Error as TmplError, TMPL}, db::{Config, CONFIG_STORE, Experience, JsonStore}};
+use serde::Deserialize;
 
 #[derive(Debug)]
 pub enum Error {
@@ -73,9 +75,64 @@ pub async fn home_page(tmpl: web::Data<&Tmpl>, config: web::Data<&JsonStore<Conf
        .body(t))
 }
 
-pub async fn contact_page(tmpl: web::Data<&Tmpl>, config: web::Data<&JsonStore<Config>>) -> Result<HttpResponse> {
-    let t = tmpl.render_contact_page(&config.read()?)?;
+#[derive(Deserialize)]
+pub struct ContactForm {
+    pub email: String,
+    pub subject: String,
+    pub body: String
+}
+
+pub async fn get_contact_page(tmpl: web::Data<&Tmpl>, config: web::Data<&JsonStore<Config>>) -> Result<HttpResponse> {
+    let t = tmpl.render_contact_page(&config.read()?, None)?;
     Ok(HttpResponse::build(StatusCode::OK)
+       .content_type(ContentType::html())
+       .body(t))
+}
+
+pub async fn post_contact_page(form: Option<web::Form<ContactForm>>, db: web::Data<Pool<MySql>>, tmpl: web::Data<&Tmpl>, config: web::Data<&JsonStore<Config>>) -> Result<HttpResponse> {
+    let msg: Option<&str>;
+    let mut status = StatusCode::OK;
+    if let Some(f) = form {
+        if f.email.chars().count() == 0 {
+            msg = Some("Must provide an email.");
+            status = StatusCode::BAD_REQUEST;
+        } else if f.email.chars().count() > 255 {
+            msg = Some("Email cannot be longer than 255 characters.");
+            status = StatusCode::BAD_REQUEST;
+        } else if f.subject.chars().count() == 0 {
+            msg = Some("Must provide a subject.");
+            status = StatusCode::BAD_REQUEST;
+        } else if f.subject.chars().count() > 255 {
+            msg = Some("Subject cannot be longer than 255 characters.");
+            status = StatusCode::BAD_REQUEST;
+        } else if f.body.chars().count() == 0 {
+            msg = Some("Must provide a subject.");
+            status = StatusCode::BAD_REQUEST;
+        } else if f.body.chars().count() > 2000 {
+            msg = Some("Body cannot be longer than 2000 characters.");
+            status = StatusCode::BAD_REQUEST;
+        } else {
+            let res = sqlx::query("INSERT INTO message (email, subject, body) VALUES (?, ?, ?);")
+            .bind(&f.email)
+            .bind(&f.subject)
+            .bind(&f.body)
+            .execute(db.as_ref())
+            .await;
+            match res {
+                Err(e) => {
+                    log::error!("{e}");
+                    msg = Some("Something went wrong.");
+                    status = StatusCode::INTERNAL_SERVER_ERROR;
+                },
+                Ok(_) => msg = Some("Message sent successfully.")
+            };
+        }
+    } else {
+        msg = Some("Must provide an email, subject, and body.");
+        status = StatusCode::BAD_REQUEST;
+    }
+    let t = tmpl.render_contact_page(&config.read()?, msg)?;
+    Ok(HttpResponse::build(status)
        .content_type(ContentType::html())
        .body(t))
 }
