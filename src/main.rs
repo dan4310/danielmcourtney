@@ -34,12 +34,23 @@ async fn main() -> std::io::Result<()> {
     TMPL.set(Tmpl::new(template_glob.as_str()).unwrap()).unwrap();
     CONFIG_STORE.set(config_store).unwrap();
 
-    let db_url = std::env::var("DB_URL").unwrap();
-    let mysql_pool = MySqlPoolOptions::new()
+    let db_url = match std::env::var("DB_URL") {
+        Ok(url) => url,
+        Err(e) => {
+            eprintln!("Error (DB_URL): {e}");
+            std::process::exit(1);
+        }
+    };
+    let mysql_pool = match MySqlPoolOptions::new()
         .max_connections(4)
         .connect(&db_url)
-        .await
-        .unwrap();
+        .await {
+        Ok(pool) => pool,
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+    };
 
     let tmpl = web::Data::new(TMPL.get().unwrap());
     let config = web::Data::new(CONFIG_STORE.get().unwrap());
